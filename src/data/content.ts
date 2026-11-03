@@ -5,7 +5,7 @@ export type Lang = 'fr' | 'en';
 type Text = Record<Lang, string>;
 
 export const profile = {
-  name: 'Koffi Modeste Junior',
+  name: 'Modeste Junior Koffi',
   github: 'https://github.com/Junmodeste',
   email: 'modestekoffi005@gmail.com',
   // Laisser vide pour masquer le lien.
@@ -187,7 +187,7 @@ export const education: Experience[] = [
 
 export const ui = {
   fr: {
-    metaTitle: 'Koffi Modeste Junior — Ingénieur logiciel, développeur intégrateur Odoo',
+    metaTitle: 'Modeste Junior Koffi — Ingénieur logiciel, développeur intégrateur Odoo',
     metaDescription:
       "Développeur Odoo : modules, outils et agents IA pour les consultants, intégrateurs et PME d'Afrique de l'Ouest francophone.",
     skip: 'Aller au contenu',
@@ -245,7 +245,7 @@ export const ui = {
     source: 'Code source',
   },
   en: {
-    metaTitle: 'Koffi Modeste Junior — Software Engineer, Odoo Developer & Integrator',
+    metaTitle: 'Modeste Junior Koffi — Software Engineer, Odoo Developer & Integrator',
     metaDescription:
       'Odoo developer: modules, tools and AI agents for Odoo consultants, integrators and small businesses in French-speaking West Africa.',
     skip: 'Skip to content',

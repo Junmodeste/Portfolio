@@ -1,4 +1,4 @@
-# Portfolio — Koffi Modeste Junior
+# Portfolio — Modeste Junior Koffi
 
 🇫🇷 [Français](#français) · 🇬🇧 [English](#english)
 
@@ -23,11 +23,11 @@ Le contenu (textes FR/EN, projets, liens, parcours) est dans [`src/data/content.
 
 ### Licence
 
-Code sous licence [MIT](LICENSE). Les textes sont © Koffi Modeste Junior.
+Code sous licence [MIT](LICENSE). Les textes sont © Modeste Junior Koffi.
 
 ### Auteur
 
-Koffi Modeste Junior — [@Junmodeste](https://github.com/Junmodeste)
+Modeste Junior Koffi — [@Junmodeste](https://github.com/Junmodeste)
 
 ## English
 
@@ -50,8 +50,8 @@ All content (FR/EN copy, projects, links, experience) lives in [`src/data/conten
 
 ### License
 
-Code under the [MIT](LICENSE) license. Texts © Koffi Modeste Junior.
+Code under the [MIT](LICENSE) license. Texts © Modeste Junior Koffi.
 
 ### Author
 
-Koffi Modeste Junior — [@Junmodeste](https://github.com/Junmodeste)
+Modeste Junior Koffi — [@Junmodeste](https://github.com/Junmodeste)
