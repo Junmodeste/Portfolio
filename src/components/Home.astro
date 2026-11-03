@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
+import photo from '../assets/photo.jpg';
 import { profile, projects, experience, education, ui, type Lang } from '../data/content';
 
 interface Props {
@@ -18,14 +20,23 @@ const timeline = [
 ].filter((g) => g.items.length);
 ---
 
-<section class={`${section} pt-16 pb-20 sm:pt-24 sm:pb-28`}>
-  <p class="reveal mb-4 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-sm text-muted">
+<section class={`${section} grid items-center gap-10 pt-12 pb-20 sm:pt-20 sm:pb-28 md:grid-cols-[1fr_auto]`}>
+  <Image
+    src={photo}
+    alt={profile.name}
+    widths={[160, 320, 400]}
+    sizes="(min-width: 768px) 288px, 128px"
+    loading="eager"
+    class="size-32 rounded-full object-cover ring-4 ring-accent-soft md:order-last md:size-72"
+  />
+  <div>
+  <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-sm text-muted">
     <span class="size-2 rounded-full bg-accent" aria-hidden="true"></span>
     {t.role}
   </p>
-  <h1 class="reveal max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">{profile.name}</h1>
-  <p class="reveal mt-6 max-w-2xl text-lg text-muted sm:text-xl">{t.pitch}</p>
-  <div class="reveal mt-8 flex flex-wrap gap-3">
+  <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">{profile.name}</h1>
+  <p class="mt-6 max-w-2xl text-lg text-muted sm:text-xl">{t.pitch}</p>
+  <div class="mt-8 flex flex-wrap gap-3">
     <a
       href="#projets"
       class="inline-flex min-h-11 items-center rounded-lg bg-accent px-5 font-semibold text-on-accent transition-opacity duration-200 hover:opacity-90"
@@ -37,7 +48,7 @@ const timeline = [
       >{t.ctaContact}</a
     >
   </div>
-  <ul class="reveal mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+  <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
     {
       t.facts.map((f) => (
         <li class="flex items-center gap-2">
@@ -47,6 +58,7 @@ const timeline = [
       ))
     }
   </ul>
+  </div>
 </section>
 
 <section id="projets" class={`${section} py-16`} aria-labelledby="projets-title">
