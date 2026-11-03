@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/open-sans/400.css";
+@import "@fontsource/open-sans/600.css";
+
+/* Le thème sombre suit la classe .dark posée sur <html> (voir Base.astro). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Contrastes vérifiés (WCAG) : texte ≥ 16:1, texte secondaire ≥ 7:1, accent ≥ 6.3:1. */
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --fg: #18181b;
+  --muted: #52525b;
+  --border: #e4e4e7;
+  --accent: #714b67;
+  --on-accent: #ffffff;
+  --accent-soft: #f5eff4;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0c0b10;
+  --card: #17151d;
+  --fg: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #2a2832;
+  --accent: #d9a8cc;
+  --on-accent: #0c0b10;
+  --accent-soft: #2a1f28;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Apparition discrète au défilement, seulement si le JS tourne et que le système l'accepte. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
