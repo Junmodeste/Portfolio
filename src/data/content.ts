@@ -94,7 +94,84 @@ export interface Experience {
   place: string;
   summary: Text;
 }
-export const experience: Experience[] = [];
+export const experience: Experience[] = [
+  {
+    period: { fr: 'Avr. 2026 – aujourd’hui', en: 'Apr 2026 – present' },
+    title: { fr: 'Ingénieur logiciel · Développeur intégrateur Odoo', en: 'Software Engineer · Odoo Developer & Integrator' },
+    place: 'Thalys Conseil & Associés, Abidjan',
+    summary: {
+      fr: 'Modules et contrôleurs Odoo sur mesure pour les processus métier des clients, déploiement d’Odoo et PostgreSQL avec Docker, intégrations API et automatisation de tâches récurrentes.',
+      en: 'Custom Odoo modules and controllers for client business processes, Odoo and PostgreSQL deployment with Docker, API integrations and automation of recurring tasks.',
+    },
+  },
+  {
+    period: { fr: 'Oct. 2025 – mars 2026', en: 'Oct 2025 – Mar 2026' },
+    title: { fr: 'Ingénieur logiciel junior (CDD)', en: 'Junior Software Engineer (fixed-term)' },
+    place: 'Thalys Conseil & Associés, Abidjan',
+    summary: {
+      fr: 'Déploiement d’Odoo pour des entreprises clientes : installation, paramétrage selon le besoin de chaque client, mise en production et suivi.',
+      en: 'Odoo rollouts for client companies: installation, configuration for each client’s needs, go-live and follow-up.',
+    },
+  },
+  {
+    period: { fr: 'Oct. 2024 – sept. 2025', en: 'Oct 2024 – Sep 2025' },
+    title: { fr: 'Ingénieur logiciel junior (stage)', en: 'Junior Software Engineer (internship)' },
+    place: 'Thalys Conseil & Associés, Abidjan',
+    summary: {
+      fr: 'Fonctionnalités Odoo : stock et multi-entrepôts, actions automatisées, adaptation de modules et intégration de la paie.',
+      en: 'Odoo features: inventory and multi-warehouse, automated actions, module customization and payroll integration.',
+    },
+  },
+  {
+    period: { fr: 'Août – oct. 2024', en: 'Aug – Oct 2024' },
+    title: { fr: 'Développeur logiciel junior (stage)', en: 'Junior Software Developer (internship)' },
+    place: 'Ivoirephoenix, Grand-Bassam',
+    summary: {
+      fr: 'Développement web back-end en PHP.',
+      en: 'Back-end web development with PHP.',
+    },
+  },
+  {
+    period: { fr: 'Juil. – août 2022', en: 'Jul – Aug 2022' },
+    title: { fr: 'Développeur logiciel junior (stage)', en: 'Junior Software Developer (internship)' },
+    place: 'Institut Ivoirien de Technologie, Abidjan',
+    summary: {
+      fr: 'Premiers développements Odoo en Python.',
+      en: 'First Odoo developments in Python.',
+    },
+  },
+];
+
+// Formation : même format que le parcours, affichée dans la même section.
+export const education: Experience[] = [
+  {
+    period: { fr: 'Oct. 2024 – juil. 2026', en: 'Oct 2024 – Jul 2026' },
+    title: { fr: 'Master en informatique', en: "Master's degree in Computer Science" },
+    place: 'Institut Ivoirien de Technologie, Abidjan',
+    summary: {
+      fr: 'Mention Très Bien. Vice-président de l’Association des Alumni.',
+      en: 'Graduated with highest honours (Très Bien). Vice-president of the Alumni Association.',
+    },
+  },
+  {
+    period: { fr: 'Sept. – déc. 2023', en: 'Sep – Dec 2023' },
+    title: { fr: 'Programme d’échange en informatique', en: 'Computer science exchange program' },
+    place: 'Sun Moon University, Corée du Sud',
+    summary: {
+      fr: 'Échange universitaire de 5 mois : développement React et React Native. Résultat : B+.',
+      en: '5-month university exchange: React and React Native development. Grade: B+.',
+    },
+  },
+  {
+    period: { fr: 'Oct. 2021 – juil. 2024', en: 'Oct 2021 – Jul 2024' },
+    title: { fr: 'Licence en informatique', en: "Bachelor's degree in Computer Science" },
+    place: 'Institut Ivoirien de Technologie, Abidjan',
+    summary: {
+      fr: 'Mention Assez Bien. Vice-président du Club informatique (2022-2023).',
+      en: 'Graduated with honours (Assez Bien). Vice-president of the Computer Club (2022-2023).',
+    },
+  },
+];
 
 export const ui = {
   fr: {
@@ -140,6 +217,8 @@ export const ui = {
       },
     ],
     experienceTitle: 'Parcours',
+    jobsTitle: 'Expérience',
+    educationTitle: 'Formation',
     contactTitle: 'Travaillons ensemble',
     contactText:
       'Un projet Odoo, une localisation ou une automatisation à mettre en place ? Écrivez-moi, je réponds rapidement.',
@@ -152,7 +231,7 @@ export const ui = {
     metaDescription:
       'Odoo developer: modules, tools and AI agents for Odoo consultants, integrators and small businesses in French-speaking West Africa.',
     skip: 'Skip to content',
-    nav: { projects: 'Projects', expertise: 'Expertise', experience: 'Experience', contact: 'Contact' },
+    nav: { projects: 'Projects', expertise: 'Expertise', experience: 'Background', contact: 'Contact' },
     themeToggle: 'Toggle theme',
     langSwitch: 'Français',
     langSwitchLabel: 'Lire ce site en français',
@@ -189,7 +268,9 @@ export const ui = {
         text: 'Docker, GitHub Actions CI and a module generator to ship fast without regressions.',
       },
     ],
-    experienceTitle: 'Experience',
+    experienceTitle: 'Background',
+    jobsTitle: 'Experience',
+    educationTitle: 'Education',
     contactTitle: "Let's work together",
     contactText: 'Need an Odoo project, a localization or an automation? Write to me, I answer quickly.',
     contactEmail: 'Send an email',

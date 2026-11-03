@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { profile, projects, experience, ui, type Lang } from '../data/content';
+import { profile, projects, experience, education, ui, type Lang } from '../data/content';
 
 interface Props {
   lang: Lang;
@@ -12,6 +12,10 @@ const others = projects.filter((p) => !p.featured);
 // Les descriptions utilisent `code` en Markdown léger.
 const md = (s: string) => s.replace(/`([^`]+)`/g, '<code class="rounded bg-accent-soft px-1 py-0.5 text-[0.9em]">$1</code>');
 const section = 'mx-auto max-w-6xl px-4 sm:px-6';
+const timeline = [
+  { title: t.jobsTitle, items: experience },
+  { title: t.educationTitle, items: education },
+].filter((g) => g.items.length);
 ---
 
 <section class={`${section} pt-16 pb-20 sm:pt-24 sm:pb-28`}>
@@ -121,23 +125,29 @@ const section = 'mx-auto max-w-6xl px-4 sm:px-6';
 </section>
 
 {
-  experience.length > 0 && (
+  timeline.length > 0 && (
     <section id="parcours" class={`${section} py-16`} aria-labelledby="parcours-title">
       <h2 id="parcours-title" class="reveal mb-10 text-3xl font-semibold tracking-tight">
         {t.experienceTitle}
       </h2>
-      <ol class="relative ml-2 border-l border-line">
-        {experience.map((e) => (
-          <li class="reveal mb-10 ml-6">
-            <span class="absolute -left-1.5 mt-2 size-3 rounded-full bg-accent" aria-hidden="true" />
-            <p class="text-sm text-muted">{e.period[lang]}</p>
-            <h3 class="mt-1 font-semibold">
-              {e.title[lang]} · <span class="text-muted">{e.place}</span>
-            </h3>
-            <p class="mt-2 text-sm text-muted">{e.summary[lang]}</p>
-          </li>
+      <div class="grid gap-12 lg:grid-cols-2">
+        {timeline.map((group) => (
+          <div>
+            <h3 class="reveal mb-6 text-xl font-semibold">{group.title}</h3>
+            <ol class="ml-2 border-l border-line">
+              {group.items.map((e) => (
+                <li class="reveal relative mb-8 pl-6 last:mb-0">
+                  <span class="absolute top-2 -left-1.5 size-3 rounded-full bg-accent" aria-hidden="true" />
+                  <p class="text-sm text-muted">{e.period[lang]}</p>
+                  <h4 class="mt-1 font-semibold">{e.title[lang]}</h4>
+                  <p class="text-sm font-semibold text-accent">{e.place}</p>
+                  <p class="mt-2 text-sm text-muted">{e.summary[lang]}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         ))}
-      </ol>
+      </div>
     </section>
   )
 }
