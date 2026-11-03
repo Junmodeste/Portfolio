@@ -1,1 +1,57 @@
-# Portfolio
+# Portfolio — Koffi Modeste Junior
+
+🇫🇷 [Français](#français) · 🇬🇧 [English](#english)
+
+## Français
+
+Mon site portfolio de développeur Odoo : projets open source, expertise et contact, en français et en anglais.
+Site statique construit avec Astro et Tailwind CSS, avec thème clair et sombre, publié sur GitHub Pages.
+
+En ligne : https://junmodeste.github.io/Portfolio/
+
+### Prérequis
+
+- Node.js 22.23 ou plus récent (ou Docker)
+
+### Installation
+
+1. `git clone https://github.com/Junmodeste/Portfolio.git && cd Portfolio`
+2. `npm install`
+3. `npm run dev`, puis ouvrir http://localhost:4321/Portfolio/
+
+Le contenu (textes FR/EN, projets, liens, parcours) est dans [`src/data/content.ts`](src/data/content.ts). Chaque push sur `main` déploie le site via GitHub Actions.
+
+### Licence
+
+Code sous licence [MIT](LICENSE). Les textes sont © Koffi Modeste Junior.
+
+### Auteur
+
+Koffi Modeste Junior — [@Junmodeste](https://github.com/Junmodeste)
+
+## English
+
+My Odoo developer portfolio: open source projects, expertise and contact, in French and English.
+A static site built with Astro and Tailwind CSS, with light and dark themes, published on GitHub Pages.
+
+Live: https://junmodeste.github.io/Portfolio/
+
+### Requirements
+
+- Node.js 22.23 or newer (or Docker)
+
+### Installation
+
+1. `git clone https://github.com/Junmodeste/Portfolio.git && cd Portfolio`
+2. `npm install`
+3. `npm run dev`, then open http://localhost:4321/Portfolio/
+
+All content (FR/EN copy, projects, links, experience) lives in [`src/data/content.ts`](src/data/content.ts). Every push to `main` deploys the site with GitHub Actions.
+
+### License
+
+Code under the [MIT](LICENSE) license. Texts © Koffi Modeste Junior.
+
+### Author
+
+Koffi Modeste Junior — [@Junmodeste](https://github.com/Junmodeste)
