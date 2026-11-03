@@ -9,7 +9,7 @@ export const profile = {
   github: 'https://github.com/Junmodeste',
   email: 'modestekoffi005@gmail.com',
   // Laisser vide pour masquer le lien.
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/modeste-koffi-odoo/',
 };
 
 export interface Project {
@@ -98,7 +98,7 @@ export const experience: Experience[] = [];
 
 export const ui = {
   fr: {
-    metaTitle: 'Koffi Modeste Junior — Développeur Odoo',
+    metaTitle: 'Koffi Modeste Junior — Ingénieur logiciel, développeur intégrateur Odoo',
     metaDescription:
       "Développeur Odoo : modules, outils et agents IA pour les consultants, intégrateurs et PME d'Afrique de l'Ouest francophone.",
     skip: 'Aller au contenu',
@@ -106,7 +106,7 @@ export const ui = {
     themeToggle: 'Changer de thème',
     langSwitch: 'English',
     langSwitchLabel: 'Read this site in English',
-    role: 'Développeur Odoo · IA & automatisation',
+    role: 'Ingénieur logiciel · Développeur intégrateur Odoo',
     pitch:
       "Je conçois des modules Odoo, des outils et des agents IA pour les consultants, intégrateurs et PME d'Afrique de l'Ouest francophone.",
     ctaProjects: 'Voir les projets',
@@ -148,7 +148,7 @@ export const ui = {
     source: 'Code source',
   },
   en: {
-    metaTitle: 'Koffi Modeste Junior — Odoo Developer',
+    metaTitle: 'Koffi Modeste Junior — Software Engineer, Odoo Developer & Integrator',
     metaDescription:
       'Odoo developer: modules, tools and AI agents for Odoo consultants, integrators and small businesses in French-speaking West Africa.',
     skip: 'Skip to content',
@@ -156,7 +156,7 @@ export const ui = {
     themeToggle: 'Toggle theme',
     langSwitch: 'Français',
     langSwitchLabel: 'Lire ce site en français',
-    role: 'Odoo Developer · AI & automation',
+    role: 'Software Engineer · Odoo Developer & Integrator',
     pitch:
       'I build Odoo modules, tools and AI agents for consultants, integrators and small businesses in French-speaking West Africa.',
     ctaProjects: 'See projects',
