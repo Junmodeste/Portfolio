@@ -84,7 +84,7 @@ const timeline = [
         <li class="reveal">
           <article class="group relative flex h-full flex-col rounded-2xl border border-line bg-card p-6 transition-colors duration-200 hover:border-accent">
             <h3 class="font-display text-lg font-semibold break-words">
-              <a href={p.repo} class="after:absolute after:inset-0 after:rounded-2xl">
+              <a href={p.site || p.repo} class="after:absolute after:inset-0 after:rounded-2xl">
                 {p.name}
               </a>
             </h3>
@@ -95,7 +95,7 @@ const timeline = [
               ))}
             </ul>
             <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-accent" aria-hidden="true">
-              {t.viewCode}
+              {p.site ? t.viewSite : t.viewCode}
               <Icon name="arrow-up-right" class="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </article>
@@ -109,8 +109,8 @@ const timeline = [
   <h2 id="expertise-title" class="reveal mb-10 text-3xl font-semibold tracking-tight">{t.expertiseTitle}</h2>
   <ul class="grid gap-6 sm:grid-cols-2">
     {
-      t.expertise.map((item) => (
-        <li class="reveal flex gap-4 rounded-2xl border border-line bg-card p-6">
+      t.expertise.map((item, i) => (
+        <li class:list={['reveal flex gap-4 rounded-2xl border border-line bg-card p-6', i === 0 && 'sm:col-span-2']}>
           <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
             <Icon name={item.icon} />
           </span>

@@ -15,6 +15,8 @@ export const profile = {
 export interface Project {
   name: string;
   repo: string;
+  // Site en ligne : remplace le lien vers le code (repo privé par exemple).
+  site?: string;
   description: Text;
   tags: string[];
   featured?: boolean;
@@ -75,6 +77,16 @@ export const projects: Project[] = [
       en: 'A commented Odoo 19 cheat sheet (in French) shipped as an installable, tested module.',
     },
     tags: ['Odoo 19', 'Python', 'Formation'],
+  },
+  {
+    name: 'Divine Providence de Daloa',
+    repo: '',
+    site: 'https://www.divine-providence-daloa.com/',
+    description: {
+      fr: 'Site web du Groupe Scolaire Privé Divine Providence de Daloa : cycles de la garderie au collège, actualités, galerie photo et préinscription en ligne.',
+      en: 'Website of the Divine Providence private school group in Daloa: classes from daycare to middle school, news, photo gallery and online pre-registration.',
+    },
+    tags: ['Site web', 'Python', 'JavaScript', 'Éducation'],
   },
   {
     name: 'odoo-docker-quickstart',
@@ -193,8 +205,14 @@ export const ui = {
     projectsIntro: 'Code ouvert, testé, documenté en français et en anglais.',
     featured: 'Projet phare',
     viewCode: 'Voir le code',
+    viewSite: 'Voir le site',
     expertiseTitle: 'Ce que je fais',
     expertise: [
+      {
+        icon: 'rocket',
+        title: 'Déploiement Odoo pour entreprises et PME',
+        text: "Installation et configuration de votre base Odoo selon vos processus, puis contrat d'assistance et de formation pour vos équipes, avec paramétrage sur mesure si besoin après la mise en service.",
+      },
       {
         icon: 'blocks',
         title: 'Modules Odoo sur mesure',
@@ -245,8 +263,14 @@ export const ui = {
     projectsIntro: 'Open, tested code, documented in French and English.',
     featured: 'Featured project',
     viewCode: 'View code',
+    viewSite: 'Visit site',
     expertiseTitle: 'What I do',
     expertise: [
+      {
+        icon: 'rocket',
+        title: 'Odoo rollout for companies and SMEs',
+        text: 'Installation and configuration of your Odoo database around your processes, followed by a support and training contract for your teams, with custom configuration when needed after go-live.',
+      },
       {
         icon: 'blocks',
         title: 'Custom Odoo modules',
