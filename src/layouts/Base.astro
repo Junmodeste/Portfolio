@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { profile, ui, experience, education, type Lang } from '../data/content';
+import { profile, ui, type Lang } from '../data/content';
 
 interface Props {
   lang: Lang;
@@ -16,7 +16,7 @@ const canonical = new URL(home, Astro.site);
 const nav = [
   { href: '#projets', label: t.nav.projects },
   { href: '#expertise', label: t.nav.expertise },
-  ...(experience.length || education.length ? [{ href: '#parcours', label: t.nav.experience }] : []),
+  { href: '#parcours', label: t.nav.experience },
   { href: '#contact', label: t.nav.contact },
 ];
 ---

@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import photo from '../assets/photo.jpg';
-import { profile, projects, experience, education, ui, type Lang } from '../data/content';
+import { profile, projects, career, earlySteps, education, ui, type Lang } from '../data/content';
 
 interface Props {
   lang: Lang;
@@ -14,10 +14,6 @@ const others = projects.filter((p) => !p.featured);
 // Les descriptions utilisent `code` en Markdown léger.
 const md = (s: string) => s.replace(/`([^`]+)`/g, '<code class="rounded bg-accent-soft px-1 py-0.5 text-[0.9em]">$1</code>');
 const section = 'mx-auto max-w-6xl px-4 sm:px-6';
-const timeline = [
-  { title: t.jobsTitle, items: experience },
-  { title: t.educationTitle, items: education },
-].filter((g) => g.items.length);
 ---
 
 <section class={`${section} grid items-center gap-10 pt-12 pb-20 sm:pt-20 sm:pb-28 md:grid-cols-[1fr_auto]`}>
@@ -136,33 +132,65 @@ const timeline = [
   </ul>
 </section>
 
-{
-  timeline.length > 0 && (
-    <section id="parcours" class={`${section} py-16`} aria-labelledby="parcours-title">
-      <h2 id="parcours-title" class="reveal mb-10 text-3xl font-semibold tracking-tight">
-        {t.experienceTitle}
-      </h2>
-      <div class="grid gap-12 lg:grid-cols-2">
-        {timeline.map((group) => (
-          <div>
-            <h3 class="reveal mb-6 text-xl font-semibold">{group.title}</h3>
-            <ol class="ml-2 border-l border-line">
-              {group.items.map((e) => (
-                <li class="reveal relative mb-8 pl-6 last:mb-0">
-                  <span class="absolute top-2 -left-1.5 size-3 rounded-full bg-accent" aria-hidden="true" />
-                  <p class="text-sm text-muted">{e.period[lang]}</p>
-                  <h4 class="mt-1 font-semibold">{e.title[lang]}</h4>
-                  <p class="text-sm font-semibold text-accent">{e.place}</p>
-                  <p class="mt-2 text-sm text-muted">{e.summary[lang]}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
+<section id="parcours" class={`${section} py-16`} aria-labelledby="parcours-title">
+  <h2 id="parcours-title" class="reveal mb-10 text-3xl font-semibold tracking-tight">{t.experienceTitle}</h2>
+
+  <article class="reveal rounded-2xl border border-line bg-card p-6 sm:p-8">
+    <p class="text-sm text-muted">{career.period[lang]} · {career.city}</p>
+    <h3 class="mt-1 text-2xl font-semibold">{career.org}</h3>
+
+    <ol class="mt-5 flex flex-wrap items-center gap-2 text-sm" aria-label={t.experienceTitle}>
+      {
+        career.steps.map((step, i) => {
+          const last = i === career.steps.length - 1;
+          return (
+            <li class="flex items-center gap-2">
+              <span
+                class:list={[
+                  'rounded-full px-3 py-1 font-semibold',
+                  last ? 'bg-accent text-on-accent' : 'border border-line text-muted',
+                ]}
+              >
+                {step[lang]}
+                {last && <span class="sr-only"> ({t.current})</span>}
+              </span>
+              {!last && <Icon name="arrow-right" class="size-4 text-muted" />}
+            </li>
+          );
+        })
+      }
+    </ol>
+
+    <p class="mt-5 max-w-3xl text-muted">{career.story[lang]}</p>
+
+    <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+      {
+        career.highlights.map((h) => (
+          <li class="flex gap-3 rounded-xl bg-accent-soft p-4 text-sm">
+            <Icon name="check" class="mt-0.5 size-4 shrink-0 text-accent" />
+            {h[lang]}
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+
+  <p class="reveal mt-4 text-sm text-muted">{earlySteps[lang]}</p>
+
+  <h3 class="reveal mt-14 mb-6 text-xl font-semibold">{t.educationTitle}</h3>
+  <ul class="grid gap-6 sm:grid-cols-3">
+    {
+      education.map((d) => (
+        <li class="reveal rounded-2xl border border-line bg-card p-6">
+          <p class="font-display text-3xl font-bold text-accent">{d.year}</p>
+          <h4 class="mt-2 font-semibold">{d.title[lang]}</h4>
+          <p class="text-sm text-muted">{d.school}</p>
+          <p class="mt-3 text-sm">{d.note[lang]}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
 
 <section id="contact" class={`${section} py-16 pb-24`} aria-labelledby="contact-title">
   <div class="reveal rounded-2xl bg-accent px-6 py-12 text-on-accent sm:px-12">

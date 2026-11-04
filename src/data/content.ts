@@ -99,89 +99,67 @@ export const projects: Project[] = [
   },
 ];
 
-// Parcours : laisser vide pour masquer la section.
-export interface Experience {
+// Parcours : raconté comme une progression, pas comme une liste de postes.
+export interface Career {
   period: Text;
-  title: Text;
-  place: string;
-  summary: Text;
+  org: string;
+  city: string;
+  // Étapes successives dans la même structure, de la plus ancienne à l'actuelle.
+  steps: Text[];
+  story: Text;
+  highlights: Text[];
 }
-export const experience: Experience[] = [
-  {
-    period: { fr: 'Avr. 2026 – aujourd’hui', en: 'Apr 2026 – present' },
-    title: { fr: 'Ingénieur logiciel · Développeur intégrateur Odoo', en: 'Software Engineer · Odoo Developer & Integrator' },
-    place: 'Thalys Conseil & Associés, Abidjan',
-    summary: {
-      fr: 'Modules et contrôleurs Odoo sur mesure pour les processus métier des clients, déploiement d’Odoo et PostgreSQL avec Docker, intégrations API et automatisation de tâches récurrentes.',
-      en: 'Custom Odoo modules and controllers for client business processes, Odoo and PostgreSQL deployment with Docker, API integrations and automation of recurring tasks.',
-    },
+export const career: Career = {
+  period: { fr: 'Depuis oct. 2024', en: 'Since Oct 2024' },
+  org: 'Thalys Conseil & Associés',
+  city: 'Abidjan',
+  steps: [
+    { fr: 'Stagiaire', en: 'Intern' },
+    { fr: 'Ingénieur junior', en: 'Junior engineer' },
+    { fr: 'Ingénieur logiciel', en: 'Software engineer' },
+  ],
+  story: {
+    fr: 'Entré en stage, aujourd’hui ingénieur logiciel : je mets Odoo en production chez les clients du cabinet, de l’installation au module sur mesure.',
+    en: 'Started as an intern, now a software engineer: I put Odoo into production for the firm’s clients, from installation to custom modules.',
   },
-  {
-    period: { fr: 'Oct. 2025 – mars 2026', en: 'Oct 2025 – Mar 2026' },
-    title: { fr: 'Ingénieur logiciel junior (CDD)', en: 'Junior Software Engineer (fixed-term)' },
-    place: 'Thalys Conseil & Associés, Abidjan',
-    summary: {
-      fr: 'Déploiement d’Odoo pour des entreprises clientes : installation, paramétrage selon le besoin de chaque client, mise en production et suivi.',
-      en: 'Odoo rollouts for client companies: installation, configuration for each client’s needs, go-live and follow-up.',
-    },
-  },
-  {
-    period: { fr: 'Oct. 2024 – sept. 2025', en: 'Oct 2024 – Sep 2025' },
-    title: { fr: 'Ingénieur logiciel junior (stage)', en: 'Junior Software Engineer (internship)' },
-    place: 'Thalys Conseil & Associés, Abidjan',
-    summary: {
-      fr: 'Fonctionnalités Odoo : stock et multi-entrepôts, actions automatisées, adaptation de modules et intégration de la paie.',
-      en: 'Odoo features: inventory and multi-warehouse, automated actions, module customization and payroll integration.',
-    },
-  },
-  {
-    period: { fr: 'Août – oct. 2024', en: 'Aug – Oct 2024' },
-    title: { fr: 'Développeur logiciel junior (stage)', en: 'Junior Software Developer (internship)' },
-    place: 'Ivoirephoenix, Grand-Bassam',
-    summary: {
-      fr: 'Développement web back-end en PHP.',
-      en: 'Back-end web development with PHP.',
-    },
-  },
-  {
-    period: { fr: 'Juil. – août 2022', en: 'Jul – Aug 2022' },
-    title: { fr: 'Développeur logiciel junior (stage)', en: 'Junior Software Developer (internship)' },
-    place: 'Institut Ivoirien de Technologie, Abidjan',
-    summary: {
-      fr: 'Premiers développements Odoo en Python.',
-      en: 'First Odoo developments in Python.',
-    },
-  },
-];
+  highlights: [
+    { fr: 'Bases Odoo déployées et paramétrées pour des entreprises clientes', en: 'Odoo databases rolled out and configured for client companies' },
+    { fr: 'Modules et contrôleurs sur mesure selon les processus métier', en: 'Custom modules and controllers built around business processes' },
+    { fr: 'Stock multi-entrepôts, actions automatisées, intégration de la paie', en: 'Multi-warehouse inventory, automated actions, payroll integration' },
+    { fr: 'Serveurs Odoo et PostgreSQL sous Docker, intégrations API', en: 'Odoo and PostgreSQL servers on Docker, API integrations' },
+  ],
+};
 
-// Formation : même format que le parcours, affichée dans la même section.
-export const education: Experience[] = [
+// Premiers pas, résumés en une ligne sous le parcours principal.
+export const earlySteps: Text = {
+  fr: 'Avant : stages chez Ivoirephoenix (back-end PHP, 2024) et à l’Institut Ivoirien de Technologie (premiers modules Odoo en Python, 2022).',
+  en: 'Before that: internships at Ivoirephoenix (PHP back end, 2024) and Institut Ivoirien de Technologie (first Odoo modules in Python, 2022).',
+};
+
+export interface Degree {
+  year: string;
+  title: Text;
+  school: string;
+  note: Text;
+}
+export const education: Degree[] = [
   {
-    period: { fr: 'Oct. 2024 – juil. 2026', en: 'Oct 2024 – Jul 2026' },
-    title: { fr: 'Master en informatique', en: "Master's degree in Computer Science" },
-    place: 'Institut Ivoirien de Technologie, Abidjan',
-    summary: {
-      fr: 'Mention Très Bien. Vice-président de l’Association des Alumni.',
-      en: 'Graduated with highest honours (Très Bien). Vice-president of the Alumni Association.',
-    },
+    year: '2026',
+    title: { fr: 'Master en informatique', en: "Master's in Computer Science" },
+    school: 'Institut Ivoirien de Technologie',
+    note: { fr: 'Mention Très Bien · vice-président des Alumni', en: 'Highest honours · Alumni Association vice-president' },
   },
   {
-    period: { fr: 'Sept. – déc. 2023', en: 'Sep – Dec 2023' },
-    title: { fr: 'Programme d’échange en informatique', en: 'Computer science exchange program' },
-    place: 'Sun Moon University, Corée du Sud',
-    summary: {
-      fr: 'Échange universitaire de 5 mois : développement React et React Native. Résultat : B+.',
-      en: '5-month university exchange: React and React Native development. Grade: B+.',
-    },
+    year: '2024',
+    title: { fr: 'Licence en informatique', en: "Bachelor's in Computer Science" },
+    school: 'Institut Ivoirien de Technologie',
+    note: { fr: 'Vice-président du Club informatique', en: 'Computer Club vice-president' },
   },
   {
-    period: { fr: 'Oct. 2021 – juil. 2024', en: 'Oct 2021 – Jul 2024' },
-    title: { fr: 'Licence en informatique', en: "Bachelor's degree in Computer Science" },
-    place: 'Institut Ivoirien de Technologie, Abidjan',
-    summary: {
-      fr: 'Mention Assez Bien. Vice-président du Club informatique (2022-2023).',
-      en: 'Graduated with honours (Assez Bien). Vice-president of the Computer Club (2022-2023).',
-    },
+    year: '2023',
+    title: { fr: 'Échange universitaire (5 mois)', en: 'University exchange (5 months)' },
+    school: 'Sun Moon University, Corée du Sud',
+    note: { fr: 'React et React Native', en: 'React and React Native' },
   },
 ];
 
@@ -235,8 +213,8 @@ export const ui = {
       },
     ],
     experienceTitle: 'Parcours',
-    jobsTitle: 'Expérience',
     educationTitle: 'Formation',
+    current: 'Aujourd’hui',
     contactTitle: 'Travaillons ensemble',
     contactText:
       'Un projet Odoo, une localisation ou une automatisation à mettre en place ? Écrivez-moi, je réponds rapidement.',
@@ -293,8 +271,8 @@ export const ui = {
       },
     ],
     experienceTitle: 'Background',
-    jobsTitle: 'Experience',
     educationTitle: 'Education',
+    current: 'Today',
     contactTitle: "Let's work together",
     contactText: 'Need an Odoo project, a localization or an automation? Write to me, I answer quickly.',
     contactEmail: 'Send an email',
