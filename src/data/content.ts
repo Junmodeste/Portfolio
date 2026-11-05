@@ -92,10 +92,10 @@ export const projects: Project[] = [
     name: 'odoo-docker-quickstart',
     repo: 'https://github.com/Junmodeste/odoo-docker-quickstart',
     description: {
-      fr: 'Odoo 19 et PostgreSQL 16 avec Docker Compose, prêts en une commande.',
-      en: 'Odoo 19 and PostgreSQL 16 with Docker Compose, ready in one command.',
+      fr: 'Odoo 17, 18 ou 19 et PostgreSQL 16 avec Docker Compose, prêts en une commande.',
+      en: 'Odoo 17, 18 or 19 and PostgreSQL 16 with Docker Compose, ready in one command.',
     },
-    tags: ['Docker', 'Odoo 19', 'PostgreSQL'],
+    tags: ['Docker', 'Odoo 17 · 18 · 19', 'PostgreSQL'],
   },
 ];
 
