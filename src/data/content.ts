@@ -40,7 +40,7 @@ export const projects: Project[] = [
       fr: 'Montant total en toutes lettres, en français, sur les factures et devis. Gère le FCFA (XOF).',
       en: 'Total amount in French words on invoices and quotations, with FCFA (XOF) support.',
     },
-    tags: ['Odoo 19', 'Python', 'QWeb', 'FCFA'],
+    tags: ['Odoo 17 · 18 · 19', 'Python', 'QWeb', 'FCFA'],
   },
   {
     name: 'odoo-partner-ncc',
@@ -49,34 +49,34 @@ export const projects: Project[] = [
       fr: 'Identifiants ivoiriens NCC et RCCM sur les contacts, contrôlés et imprimés sur les factures PDF.',
       en: 'Ivorian NCC and RCCM identifiers on contacts, validated and printed on invoice PDFs.',
     },
-    tags: ['Odoo 19', 'Python', 'Côte d’Ivoire'],
+    tags: ['Odoo 17 · 18 · 19', 'Python', 'Côte d’Ivoire'],
   },
   {
     name: 'odoo-module-generator',
     repo: 'https://github.com/Junmodeste/odoo-module-generator',
     description: {
-      fr: "CLI `odoo-gen` : un squelette de module Odoo 19 complet et testé en une commande.",
-      en: 'The `odoo-gen` CLI: a complete, tested Odoo 19 module skeleton in one command.',
+      fr: "CLI `odoo-gen` : un squelette de module Odoo 17, 18 ou 19 complet et testé en une commande.",
+      en: 'The `odoo-gen` CLI: a complete, tested Odoo 17, 18 or 19 module skeleton in one command.',
     },
-    tags: ['Python', 'Jinja2', 'CLI', 'CI'],
+    tags: ['Odoo 17 · 18 · 19', 'Python', 'Jinja2', 'CLI', 'CI'],
   },
   {
     name: 'odoo-owl-widgets-demo',
     repo: 'https://github.com/Junmodeste/odoo-owl-widgets-demo',
     description: {
-      fr: 'Widgets de champ OWL pédagogiques (compteur, badge de statut), commentés en français et testés avec hoot.',
-      en: 'Educational OWL field widgets (counter, status badge), commented in French and tested with hoot.',
+      fr: 'Widgets de champ OWL pédagogiques (compteur, badge de statut), commentés en français et testés (hoot, QUnit en 17).',
+      en: 'Educational OWL field widgets (counter, status badge), commented in French and tested (hoot, QUnit on 17).',
     },
-    tags: ['Odoo 19', 'OWL', 'JavaScript'],
+    tags: ['Odoo 17 · 18 · 19', 'OWL', 'JavaScript'],
   },
   {
     name: 'odoo-snippets',
     repo: 'https://github.com/Junmodeste/odoo-snippets',
     description: {
-      fr: 'Aide-mémoire Odoo 19 commenté en français, sous forme de module installable et testé.',
-      en: 'A commented Odoo 19 cheat sheet (in French) shipped as an installable, tested module.',
+      fr: 'Aide-mémoire Odoo 17, 18 et 19 commenté en français, sous forme de module installable et testé.',
+      en: 'A commented Odoo 17, 18 and 19 cheat sheet (in French) shipped as an installable, tested module.',
     },
-    tags: ['Odoo 19', 'Python', 'Formation'],
+    tags: ['Odoo 17 · 18 · 19', 'Python', 'Formation'],
   },
   {
     name: 'Divine Providence de Daloa',
