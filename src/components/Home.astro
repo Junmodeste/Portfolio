@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import photo from '../assets/photo.jpg';
-import { profile, projects, career, earlySteps, education, ui, type Lang } from '../data/content';
+import { profile, projects, career, earlySteps, education, events, ui, type Lang } from '../data/content';
 
 interface Props {
   lang: Lang;
@@ -191,6 +191,43 @@ const section = 'mx-auto max-w-6xl px-4 sm:px-6';
     }
   </ul>
 </section>
+
+{
+  events.length > 0 && (
+    <section id="evenements" class={`${section} py-16`} aria-labelledby="evenements-title">
+      <div class="reveal mb-10">
+        <h2 id="evenements-title" class="text-3xl font-semibold tracking-tight">{t.eventsTitle}</h2>
+        <p class="mt-2 text-muted">{t.eventsIntro}</p>
+      </div>
+      <ul class="grid gap-6 sm:grid-cols-2">
+        {events.map((e) => (
+          <li class="reveal">
+            <article class="group relative flex h-full gap-4 rounded-2xl border border-line bg-card p-6 transition-colors duration-200 hover:border-accent">
+              <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+                <Icon name="calendar" />
+              </span>
+              <div class="flex flex-1 flex-col">
+                <p class="text-sm text-muted">
+                  {e.date[lang]} · {e.place}
+                </p>
+                <h3 class="mt-1 font-display text-lg font-semibold">
+                  <a href={e.url} class="after:absolute after:inset-0 after:rounded-2xl">
+                    {e.name}
+                  </a>
+                </h3>
+                <p class="mt-1 flex-1 text-sm text-muted">{e.role[lang]}</p>
+                <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent" aria-hidden="true">
+                  {t.viewEvent}
+                  <Icon name="arrow-up-right" class="size-4" />
+                </span>
+              </div>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
 <section id="contact" class={`${section} py-16 pb-24`} aria-labelledby="contact-title">
   <div class="reveal rounded-2xl bg-accent px-6 py-12 text-on-accent sm:px-12">

@@ -163,13 +163,34 @@ export const education: Degree[] = [
   },
 ];
 
+// Événements tech : laisser vide pour masquer la section.
+export interface TechEvent {
+  name: string;
+  date: Text;
+  place: string;
+  role: Text;
+  url: string;
+}
+export const events: TechEvent[] = [
+  {
+    name: 'Ivoire Tech Forum 2026',
+    date: { fr: '11 – 13 nov. 2026', en: 'Nov 11 – 13, 2026' },
+    place: 'Sofitel Abidjan Hôtel Ivoire',
+    role: {
+      fr: 'Visiteur. 2ᵉ édition du forum des technologies émergentes et de l’innovation en Afrique de l’Ouest, sur le thème « Innover pour transformer ».',
+      en: 'Visitor. 2nd edition of the West African forum on emerging technologies and innovation, themed “Innovate to transform”.',
+    },
+    url: 'https://luma.com/2dppzs5y',
+  },
+];
+
 export const ui = {
   fr: {
     metaTitle: 'Modeste Junior Koffi — Ingénieur logiciel, développeur intégrateur Odoo',
     metaDescription:
       "Développeur Odoo : modules, outils et agents IA pour les consultants, intégrateurs et PME d'Afrique de l'Ouest francophone.",
     skip: 'Aller au contenu',
-    nav: { projects: 'Projets', expertise: 'Expertise', experience: 'Parcours', contact: 'Contact' },
+    nav: { projects: 'Projets', expertise: 'Expertise', experience: 'Parcours', events: 'Événements', contact: 'Contact' },
     themeToggle: 'Changer de thème',
     langSwitch: 'English',
     langSwitchLabel: 'Read this site in English',
@@ -215,6 +236,9 @@ export const ui = {
     experienceTitle: 'Parcours',
     educationTitle: 'Formation',
     current: 'Aujourd’hui',
+    eventsTitle: 'Événements tech',
+    eventsIntro: 'Conférences, hackathons et rencontres auxquels j’ai participé.',
+    viewEvent: 'Voir l’événement',
     contactTitle: 'Travaillons ensemble',
     contactText:
       'Un projet Odoo, une localisation ou une automatisation à mettre en place ? Écrivez-moi, je réponds rapidement.',
@@ -227,7 +251,7 @@ export const ui = {
     metaDescription:
       'Odoo developer: modules, tools and AI agents for Odoo consultants, integrators and small businesses in French-speaking West Africa.',
     skip: 'Skip to content',
-    nav: { projects: 'Projects', expertise: 'Expertise', experience: 'Background', contact: 'Contact' },
+    nav: { projects: 'Projects', expertise: 'Expertise', experience: 'Background', events: 'Events', contact: 'Contact' },
     themeToggle: 'Toggle theme',
     langSwitch: 'Français',
     langSwitchLabel: 'Lire ce site en français',
@@ -273,6 +297,9 @@ export const ui = {
     experienceTitle: 'Background',
     educationTitle: 'Education',
     current: 'Today',
+    eventsTitle: 'Tech events',
+    eventsIntro: 'Conferences, hackathons and meetups I took part in.',
+    viewEvent: 'View event',
     contactTitle: "Let's work together",
     contactText: 'Need an Odoo project, a localization or an automation? Write to me, I answer quickly.',
     contactEmail: 'Send an email',

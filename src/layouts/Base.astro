@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { profile, ui, type Lang } from '../data/content';
+import { profile, ui, events, type Lang } from '../data/content';
 
 interface Props {
   lang: Lang;
@@ -17,6 +17,7 @@ const nav = [
   { href: '#projets', label: t.nav.projects },
   { href: '#expertise', label: t.nav.expertise },
   { href: '#parcours', label: t.nav.experience },
+  ...(events.length ? [{ href: '#evenements', label: t.nav.events }] : []),
   { href: '#contact', label: t.nav.contact },
 ];
 ---
