@@ -14,6 +14,8 @@ const others = projects.filter((p) => !p.featured);
 // Les descriptions utilisent `code` en Markdown léger.
 const md = (s: string) => s.replace(/`([^`]+)`/g, '<code class="rounded bg-accent-soft px-1 py-0.5 text-[0.9em]">$1</code>');
 const section = 'mx-auto max-w-6xl px-4 sm:px-6';
+// Événements regroupés par date, dans l'ordre du fichier de contenu.
+const eventDays = [...Map.groupBy(events, (e) => e.day[lang])];
 ---
 
 <section class={`${section} grid items-center gap-10 pt-12 pb-20 sm:pt-20 sm:pb-28 md:grid-cols-[1fr_auto]`}>
@@ -199,42 +201,69 @@ const section = 'mx-auto max-w-6xl px-4 sm:px-6';
         <h2 id="evenements-title" class="text-3xl font-semibold tracking-tight">{t.eventsTitle}</h2>
         <p class="mt-2 text-muted">{t.eventsIntro}</p>
       </div>
-      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map((e) => (
-          <li class="reveal">
-            <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card transition-colors duration-200 hover:border-accent">
-              {e.image ? (
-                <Image
-                  src={e.image}
-                  alt=""
-                  widths={[400, 800]}
-                  sizes="(min-width: 1024px) 352px, (min-width: 640px) 50vw, 100vw"
-                  class="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                />
-              ) : (
-                <span class="m-6 mb-0 grid size-11 place-items-center rounded-xl bg-accent-soft text-accent">
-                  <Icon name="calendar" />
-                </span>
-              )}
-              <div class="flex flex-1 flex-col p-6">
-                <p class="text-sm text-muted">
-                  {e.date[lang]} · {e.place}
-                </p>
-                <h3 class="mt-1 font-display text-lg font-semibold">
-                  <a href={e.url} class="after:absolute after:inset-0 after:rounded-2xl">
-                    {e.name}
-                  </a>
-                </h3>
-                <p class="mt-1 flex-1 text-sm text-muted">{e.role[lang]}</p>
-                <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent" aria-hidden="true">
-                  {t.viewEvent}
-                  <Icon name="arrow-up-right" class="size-4" />
-                </span>
-              </div>
-            </article>
-          </li>
+      <div class="space-y-10">
+        {eventDays.map(([day, list]) => (
+          <div class="reveal">
+            <h3 class="mb-4 flex items-center gap-3 text-sm font-semibold text-accent">
+              <Icon name="calendar" class="size-4 shrink-0" />
+              <span>{day}</span>
+              <span class="h-px flex-1 bg-line" aria-hidden="true" />
+            </h3>
+            <ul class="space-y-4">
+              {list.map((e) => (
+                <li>
+                  <article
+                    class:list={[
+                      'group relative flex gap-5 rounded-2xl border bg-card p-5 transition-colors duration-200 hover:border-accent sm:p-6',
+                      e === events[0] ? 'border-accent/60' : 'border-line',
+                    ]}
+                  >
+                    <div class="min-w-0 flex-1">
+                      <h4 class="font-display text-lg font-semibold">
+                        <a
+                          href={e.url}
+                          class:list={[
+                            'inline-flex items-center gap-2 after:absolute after:inset-0 after:rounded-2xl',
+                            e === events[0] && 'text-accent',
+                          ]}
+                        >
+                          {e.name}
+                          <Icon name="external-link" class="size-4 shrink-0 opacity-70" />
+                        </a>
+                      </h4>
+                      <p class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted">
+                        <span class="inline-flex items-center gap-1.5">
+                          <Icon name="clock" class="size-4" />
+                          {e.time[lang]}
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                          <Icon name="map-pin" class="size-4" />
+                          {e.place}
+                        </span>
+                      </p>
+                      <p class="mt-3 text-sm text-muted">{e.summary[lang]}</p>
+                      <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tags">
+                        {e.tags.map((tag) => (
+                          <li class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-semibold">{tag}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    {e.image && (
+                      <Image
+                        src={e.image}
+                        alt=""
+                        widths={[160, 320]}
+                        sizes="(min-width: 640px) 128px, 80px"
+                        class="size-20 shrink-0 rounded-xl object-cover sm:size-32"
+                      />
+                    )}
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }
