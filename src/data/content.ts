@@ -1,6 +1,9 @@
 // Tout le contenu du site est ici : textes FR/EN, projets, liens.
 // Pour ajouter un projet ou une expérience, modifier ce fichier uniquement.
 
+import type { ImageMetadata } from 'astro';
+import itf2026 from '../assets/events/ivoire-tech-forum-2026.jpg';
+
 export type Lang = 'fr' | 'en';
 type Text = Record<Lang, string>;
 
@@ -170,6 +173,8 @@ export interface TechEvent {
   place: string;
   role: Text;
   url: string;
+  // Affiche ou photo de l'événement, dans src/assets/events/.
+  image?: ImageMetadata;
 }
 export const events: TechEvent[] = [
   {
@@ -181,6 +186,7 @@ export const events: TechEvent[] = [
       en: 'Visitor. 2nd edition of the West African forum on emerging technologies and innovation, themed “Innovate to transform”.',
     },
     url: 'https://luma.com/2dppzs5y',
+    image: itf2026,
   },
 ];
 

@@ -199,14 +199,24 @@ const section = 'mx-auto max-w-6xl px-4 sm:px-6';
         <h2 id="evenements-title" class="text-3xl font-semibold tracking-tight">{t.eventsTitle}</h2>
         <p class="mt-2 text-muted">{t.eventsIntro}</p>
       </div>
-      <ul class="grid gap-6 sm:grid-cols-2">
+      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {events.map((e) => (
           <li class="reveal">
-            <article class="group relative flex h-full gap-4 rounded-2xl border border-line bg-card p-6 transition-colors duration-200 hover:border-accent">
-              <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
-                <Icon name="calendar" />
-              </span>
-              <div class="flex flex-1 flex-col">
+            <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card transition-colors duration-200 hover:border-accent">
+              {e.image ? (
+                <Image
+                  src={e.image}
+                  alt=""
+                  widths={[400, 800]}
+                  sizes="(min-width: 1024px) 352px, (min-width: 640px) 50vw, 100vw"
+                  class="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+              ) : (
+                <span class="m-6 mb-0 grid size-11 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <Icon name="calendar" />
+                </span>
+              )}
+              <div class="flex flex-1 flex-col p-6">
                 <p class="text-sm text-muted">
                   {e.date[lang]} · {e.place}
                 </p>
