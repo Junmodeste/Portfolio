@@ -3,6 +3,7 @@
 
 import type { ImageMetadata } from 'astro';
 import itf2026 from '../assets/events/ivoire-tech-forum-2026.jpg';
+import metaConnect2026 from '../assets/events/meta-connect-2026.jpg';
 
 export type Lang = 'fr' | 'en';
 type Text = Record<Lang, string>;
@@ -192,6 +193,19 @@ export const events: TechEvent[] = [
     tags: ['ITF 2026', 'Visiteur', 'Innovation'],
     url: 'https://luma.com/2dppzs5y',
     image: itf2026,
+  },
+  {
+    name: 'META CONNECT 2026',
+    day: { fr: 'Samedi 21 novembre 2026', en: 'Saturday, November 21, 2026' },
+    time: { fr: '10 h – 17 h', en: '10:00 AM – 5:00 PM' },
+    place: 'Centre Ivoiro-Coréen, Abidjan',
+    summary: {
+      fr: 'Journée « Compétences & IA : les nouveaux leviers de l’économie numérique ivoirienne » : conférences, panels, ateliers et networking autour du digital. Organisée par DigiSages, indépendante de Meta.',
+      en: 'A day on “Skills & AI: the new levers of the Ivorian digital economy”: talks, panels, workshops and networking around digital. Organized by DigiSages, independent from Meta.',
+    },
+    tags: ['Compétences & IA', 'Participant', 'Networking'],
+    url: 'https://luma.com/1yj762bg',
+    image: metaConnect2026,
   },
 ];
 
