@@ -46,16 +46,6 @@ const eventDays = [...Map.groupBy(events, (e) => e.day[lang])];
       >{t.ctaContact}</a
     >
   </div>
-  <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-    {
-      t.facts.map((f) => (
-        <li class="flex items-center gap-2">
-          <span class="size-1.5 rounded-full bg-accent" aria-hidden="true" />
-          {f}
-        </li>
-      ))
-    }
-  </ul>
   </div>
 </section>
 
