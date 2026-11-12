@@ -1,8 +1,8 @@
-name: deploy
+name: pages-redirect
 
+# Le site est hébergé sur Vercel (modestekoffi.com). GitHub Pages ne sert plus
+# qu'une page de redirection pour l'ancienne adresse junmodeste.github.io/Portfolio/.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,20 +15,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: withastro/action@v6
-        with:
-          node-version: 24
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v7
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .github/pages-redirect
       - id: deployment
         uses: actions/deploy-pages@v5

@@ -5,9 +5,9 @@
 ## Français
 
 Mon site portfolio de développeur Odoo : projets open source, expertise et contact, en français et en anglais.
-Site statique construit avec Astro et Tailwind CSS, avec thème clair et sombre, publié sur GitHub Pages.
+Site statique construit avec Astro et Tailwind CSS, avec thème clair et sombre, publié sur Vercel.
 
-En ligne : https://junmodeste.github.io/Portfolio/
+En ligne : https://modestekoffi.com/
 
 ### Prérequis
 
@@ -17,9 +17,9 @@ En ligne : https://junmodeste.github.io/Portfolio/
 
 1. `git clone https://github.com/Junmodeste/Portfolio.git && cd Portfolio`
 2. `npm install`
-3. `npm run dev`, puis ouvrir http://localhost:4321/Portfolio/
+3. `npm run dev`, puis ouvrir http://localhost:4321/
 
-Le contenu (textes FR/EN, projets, liens, parcours) est dans [`src/data/content.ts`](src/data/content.ts). Chaque push sur `main` déploie le site via GitHub Actions.
+Le contenu (textes FR/EN, projets, liens, parcours) est dans [`src/data/content.ts`](src/data/content.ts). Chaque push sur `main` déploie le site sur Vercel.
 
 ### Licence
 
@@ -32,9 +32,9 @@ Modeste Junior Koffi — [@Junmodeste](https://github.com/Junmodeste)
 ## English
 
 My Odoo developer portfolio: open source projects, expertise and contact, in French and English.
-A static site built with Astro and Tailwind CSS, with light and dark themes, published on GitHub Pages.
+A static site built with Astro and Tailwind CSS, with light and dark themes, published on Vercel.
 
-Live: https://junmodeste.github.io/Portfolio/
+Live: https://modestekoffi.com/
 
 ### Requirements
 
@@ -44,9 +44,9 @@ Live: https://junmodeste.github.io/Portfolio/
 
 1. `git clone https://github.com/Junmodeste/Portfolio.git && cd Portfolio`
 2. `npm install`
-3. `npm run dev`, then open http://localhost:4321/Portfolio/
+3. `npm run dev`, then open http://localhost:4321/
 
-All content (FR/EN copy, projects, links, experience) lives in [`src/data/content.ts`](src/data/content.ts). Every push to `main` deploys the site with GitHub Actions.
+All content (FR/EN copy, projects, links, experience) lives in [`src/data/content.ts`](src/data/content.ts). Every push to `main` deploys the site to Vercel.
 
 ### License
 

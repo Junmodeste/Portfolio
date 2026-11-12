@@ -2,10 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// Publié sur GitHub Pages : https://junmodeste.github.io/Portfolio/
+// Publié sur Vercel : https://modestekoffi.com/
 export default defineConfig({
-  site: 'https://junmodeste.github.io',
-  base: '/Portfolio',
+  site: 'https://modestekoffi.com',
   trailingSlash: 'always',
   i18n: {
     locales: ['fr', 'en'],
