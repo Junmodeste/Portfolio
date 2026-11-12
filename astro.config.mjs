@@ -2,9 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// Publié sur Vercel : https://modestekoffi.com/
+// Publié sur Vercel : https://www.modestekoffi.com/ (modestekoffi.com y redirige)
 export default defineConfig({
-  site: 'https://modestekoffi.com',
+  site: 'https://www.modestekoffi.com',
   trailingSlash: 'always',
   i18n: {
     locales: ['fr', 'en'],
