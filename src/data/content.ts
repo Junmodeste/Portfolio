@@ -41,10 +41,10 @@ export const projects: Project[] = [
     name: 'odoo-amount-to-text-fr',
     repo: 'https://github.com/Junmodeste/odoo-amount-to-text-fr',
     description: {
-      fr: 'Montant total en toutes lettres, en français, sur les factures et devis. Gère le FCFA (XOF).',
-      en: 'Total amount in French words on invoices and quotations, with FCFA (XOF) support.',
+      fr: 'Montant total en toutes lettres, en français, sur les factures, devis et reçus de paiement. Gère le FCFA (XOF).',
+      en: 'Total amount in French words on invoices, quotations and payment receipts, with FCFA (XOF) support.',
     },
-    tags: ['Odoo 17 · 18 · 19', 'Python', 'QWeb', 'FCFA'],
+    tags: ['Odoo 17 · 18 · 19 · 20', 'Python', 'QWeb', 'FCFA'],
   },
   {
     name: 'odoo-partner-ncc',
@@ -53,16 +53,16 @@ export const projects: Project[] = [
       fr: 'Identifiants ivoiriens NCC et RCCM sur les contacts, contrôlés et imprimés sur les factures PDF.',
       en: 'Ivorian NCC and RCCM identifiers on contacts, validated and printed on invoice PDFs.',
     },
-    tags: ['Odoo 17 · 18 · 19', 'Python', 'Côte d’Ivoire'],
+    tags: ['Odoo 17 · 18 · 19 · 20', 'Python', 'Côte d’Ivoire'],
   },
   {
     name: 'odoo-module-generator',
     repo: 'https://github.com/Junmodeste/odoo-module-generator',
     description: {
-      fr: "CLI `odoo-gen` : un squelette de module Odoo 17, 18 ou 19 complet et testé en une commande.",
-      en: 'The `odoo-gen` CLI: a complete, tested Odoo 17, 18 or 19 module skeleton in one command.',
+      fr: "CLI `odoo-gen` : un squelette de module Odoo 17, 18, 19 ou 20 complet et testé en une commande.",
+      en: 'The `odoo-gen` CLI: a complete, tested Odoo 17, 18, 19 or 20 module skeleton in one command.',
     },
-    tags: ['Odoo 17 · 18 · 19', 'Python', 'Jinja2', 'CLI', 'CI'],
+    tags: ['Odoo 17 · 18 · 19 · 20', 'Python', 'Jinja2', 'CLI', 'CI'],
   },
   {
     name: 'odoo-owl-widgets-demo',
@@ -71,16 +71,16 @@ export const projects: Project[] = [
       fr: 'Widgets de champ OWL pédagogiques (compteur, badge de statut), commentés en français et testés (hoot, QUnit en 17).',
       en: 'Educational OWL field widgets (counter, status badge), commented in French and tested (hoot, QUnit on 17).',
     },
-    tags: ['Odoo 17 · 18 · 19', 'OWL', 'JavaScript'],
+    tags: ['Odoo 17 · 18 · 19 · 20', 'OWL', 'JavaScript'],
   },
   {
     name: 'odoo-snippets',
     repo: 'https://github.com/Junmodeste/odoo-snippets',
     description: {
-      fr: 'Aide-mémoire Odoo 17, 18 et 19 commenté en français, sous forme de module installable et testé.',
-      en: 'A commented Odoo 17, 18 and 19 cheat sheet (in French) shipped as an installable, tested module.',
+      fr: 'Aide-mémoire Odoo 17, 18, 19 et 20 commenté en français, sous forme de module installable et testé.',
+      en: 'A commented Odoo 17, 18, 19 and 20 cheat sheet (in French) shipped as an installable, tested module.',
     },
-    tags: ['Odoo 17 · 18 · 19', 'Python', 'Formation'],
+    tags: ['Odoo 17 · 18 · 19 · 20', 'Python', 'Formation'],
   },
   {
     name: 'Divine Providence de Daloa',
@@ -96,10 +96,10 @@ export const projects: Project[] = [
     name: 'odoo-docker-quickstart',
     repo: 'https://github.com/Junmodeste/odoo-docker-quickstart',
     description: {
-      fr: 'Odoo 17, 18 ou 19 et PostgreSQL 16 avec Docker Compose, prêts en une commande.',
-      en: 'Odoo 17, 18 or 19 and PostgreSQL 16 with Docker Compose, ready in one command.',
+      fr: 'Odoo 17, 18, 19 ou 20 et PostgreSQL 16 avec Docker Compose, prêts en une commande.',
+      en: 'Odoo 17, 18, 19 or 20 and PostgreSQL 16 with Docker Compose, ready in one command.',
     },
-    tags: ['Docker', 'Odoo 17 · 18 · 19', 'PostgreSQL'],
+    tags: ['Docker', 'Odoo 17 · 18 · 19 · 20', 'PostgreSQL'],
   },
 ];
 
