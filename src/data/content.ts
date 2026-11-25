@@ -38,6 +38,16 @@ export const projects: Project[] = [
     tags: ['IA', 'OCR', 'Odoo', 'Voice'],
   },
   {
+    name: 'PayslipLens',
+    repo: 'https://github.com/Junmodeste/PayslipLens',
+    site: 'https://payslip-lens.web.app',
+    description: {
+      fr: "Comprendre sa fiche de paie ivoirienne en toute confidentialité : Gemini Nano dans Chrome extrait les chiffres, un moteur de règles vérifie CNPS, ITS et CMU, et seul un résumé anonymisé part dans le cloud, avec accord de l'utilisateur.",
+      en: 'Understand an Ivorian payslip privately: on-device Gemini Nano extracts the figures, a rules engine checks CNPS, ITS and CMU, and only an anonymized summary reaches the cloud, with user consent.',
+    },
+    tags: ['IA', 'Gemini Nano', 'Firebase', 'TypeScript', 'Côte d’Ivoire'],
+  },
+  {
     name: 'odoo-amount-to-text-fr',
     repo: 'https://github.com/Junmodeste/odoo-amount-to-text-fr',
     description: {
