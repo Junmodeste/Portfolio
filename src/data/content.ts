@@ -66,6 +66,15 @@ export const projects: Project[] = [
     tags: ['Odoo 17 · 18 · 19 · 20', 'Python', 'Côte d’Ivoire'],
   },
   {
+    name: 'odoo-mobile-money-statement-import',
+    repo: 'https://github.com/Junmodeste/odoo-mobile-money-statement-import',
+    description: {
+      fr: 'Import des exports CSV Wave comme relevés bancaires Odoo, avec option de ligne de frais séparée pour le rapprochement.',
+      en: 'Import Wave CSV exports as Odoo bank statements, with an optional separate fee line for reconciliation.',
+    },
+    tags: ['Odoo 17 · 18 · 19', 'Python', 'OCA', 'Mobile money'],
+  },
+  {
     name: 'odoo-module-generator',
     repo: 'https://github.com/Junmodeste/odoo-module-generator',
     description: {
